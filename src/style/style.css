@@ -1,0 +1,300 @@
+.ir {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body {
+  background-color: #eae8fe;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.logo {
+  width: 436px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.buy-item {
+  box-sizing: border-box;
+  background-color: white;
+  width: 360px;
+  margin: 67px 28px;
+  padding: 31px 27px 28px 27px;
+}
+
+.list-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.list-item .btn-cola button {
+  background-color: white;
+  padding: 11px 11px 9px 13px;
+  text-align: center;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+/* 포커스 할 때마다 움직임 */
+.btn-cola button:focus {
+  outline: 3px solid #6327fe;
+}
+
+.btn-cola button:hover {
+  outline: 3px solid #6327fe;
+}
+
+.name-cola {
+  font-size: 9px;
+  margin-top: 6px;
+}
+
+/* .price-cola {
+    margin-top: 7px;
+    font-size: 12px;
+    width: 70px;
+    height: 22px;
+    background-color: #6327FE;
+    color: white;
+    border-radius: 50px;
+    line-height: 22px;
+} */
+
+.price-cola {
+  background-color: #6327fe;
+  margin-top: 7px;
+  padding: 5px;
+  display: inline-block;
+  width: 70px;
+  font-size: 12px;
+  height: 22px;
+  color: white;
+  border-radius: 50px;
+}
+
+.select-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 20px 0 0 0;
+}
+
+.cur-change {
+  background-color: #eae8fe;
+  width: 200px;
+  height: 33px;
+  padding: 6px 10px 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.change::after {
+  content: ":";
+  margin-left: 3px;
+}
+
+.btn-change {
+  background-color: white;
+  margin-left: 12px;
+  width: 94px;
+  height: 32px;
+  font-size: 13px;
+  line-height: 19px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-pay {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  width: 200px;
+  height: 33px;
+  margin: 11px 0;
+  padding-left: 6px;
+}
+
+::placeholder {
+  color: #c5c5c5;
+}
+
+.btn-pay {
+  background-color: white;
+  margin: 11px 0 12px 12px;
+  width: 94px;
+  height: 32px;
+  font-size: 13px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.select-list {
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  background-color: #eae8fe;
+  width: 200px;
+  height: 106px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* 스크롤바 만드는법 */
+.select-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.select-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 50px;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+}
+
+.select-list::-webkit-scrollbar-track {
+  margin: 5px;
+}
+
+.select-list li img {
+  width: 18px;
+  height: 33px;
+}
+
+.select-list li {
+  background-color: white;
+  width: 170px;
+  height: 46px;
+  margin: 12px 18px 6px 12px;
+  padding: 6px 8px 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  border-radius: 5px;
+}
+
+.select-list .select-cola {
+  display: flex;
+  align-items: center;
+}
+
+.select-list .select-cola .select-name {
+  margin-left: 10px;
+}
+
+.select-list li .count {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.btn-get {
+  background-color: #6327fe;
+  width: 94px;
+  height: 106px;
+  margin-left: 12px;
+  border-radius: 5px;
+  color: white;
+  font-size: 13px;
+}
+
+.get-list {
+  width: 360px;
+  margin: 67px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-budget-container {
+  background-color: white;
+  width: 360px;
+  height: 50px;
+}
+
+.my-budget {
+  background-color: #eae8fe;
+  width: 306px;
+  height: 32px;
+  margin: 9px 27px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.get-item {
+  background-color: white;
+  margin-top: 20px;
+  padding: 25px 27px 52px 27px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select-list.get-item-list {
+  width: 306px;
+  height: 364px;
+  margin-top: 13px;
+  border-radius: 5px;
+  border: 1px solid #c5c5c5;
+  background-color: #eae8fe;
+}
+
+.select-list.get-item-list li {
+  background-color: white;
+  width: 276px;
+  height: 46px;
+  margin: 12px 18px 6px 12px;
+  padding: 6px 8px 7px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  border-radius: 5px;
+}
+
+.select-list .select-cola {
+  display: flex;
+  align-items: center;
+}
+
+.select-list .select-cola .select-name {
+  margin-left: 10px;
+}
+
+.select-list li .count {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.total-container {
+  width: 306px;
+  margin-top: 6px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.total::after {
+  content: ":";
+  margin: 0 3px;
+}
