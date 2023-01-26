@@ -102,6 +102,40 @@ class VendingMachine {
         }
       });
     });
+
+    // 4. 획득 버튼 기능
+    this.btnGet.addEventListener("click", (event) => {
+      let isGot = false;
+      let totalPrice = 0;
+
+      // 내가 고른 음료수 목록과 이미 구입한 목록을 비교
+      for (const itemSelected of this.selectedList.querySelectorAll("li")) {
+        for (const itemGot of this.getItemList.querySelectorAll("li")) {
+          let itemGotCount = itemGot.querySelector(".count");
+          if (itemSelected.dataset.item === itemGot.dataset.item) {
+            itemGotCount.textContent =
+              parseInt(itemGotCount.textContent) +
+              parseInt(itemSelected.querySelector(".count").textContent);
+            isGot = true;
+            break;
+          }
+        }
+        if (!isGot) {
+          this.getItemList.appendChild(itemSelected);
+        }
+      }
+
+      this.selectedList.innerHTML = null;
+
+      this.getItemList.querySelectorAll("li").forEach((itemGot) => {
+        totalPrice +=
+          itemGot.dataset.price *
+          parseInt(itemGot.querySelector("count").textContent);
+      });
+      this.txtTotal.textContent = `총금액: ${new Intl.NumberFormat().format(
+        totalPrice
+      )}원`;
+    });
   }
 }
 
