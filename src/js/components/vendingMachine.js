@@ -65,6 +65,43 @@ class VendingMachine {
         this.changeVal.textContent = "원";
       }
     });
+
+    // 3. 자판기 메뉴 기능
+    const btnsCola = this.itemList.querySelectorAll("button");
+
+    btnsCola.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        const targetEl = event.currentTarget;
+        const changeVal = parseInt(this.change.textContent.replaceAll(",", ""));
+        // 이미 선택되어있는지
+        let isSelected = false;
+        const targetElPrice = parseInt(targetEl.dataset.price);
+        const selectedListItem = this.selectedList.querySelectorAll("li");
+
+        if (changeVal >= targetElPrice) {
+          this.change.textContent =
+            new Intl.NumberFormat().format(changeVal - targetElPrice) + " 원";
+
+          for (const item of selectedListItem) {
+            // 내가 클릭한 상품과 내가 담은 상품이 같을 경우
+            if (item.dataset.item === targetEl.dataset.item) {
+              item.querySelector(".count").textContent++;
+              isSelected = true;
+              break;
+            }
+          }
+
+          // 처음 선택한 아이템일 경우
+          if (!isSelected) {
+            this.selectedItemGenerator(targetEl);
+          }
+
+          targetEl.dataset.count--;
+        } else {
+          alert("잔액이 부족합니다. 돈을 입금해주세요");
+        }
+      });
+    });
   }
 }
 
