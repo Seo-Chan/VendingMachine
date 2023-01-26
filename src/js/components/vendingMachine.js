@@ -14,6 +14,9 @@ class VendingMachine {
     this.getItemList = getList.querySelector(".get-item-list");
     this.txtTotal = getList.querySelector(".txt-total");
   }
+  setup() {
+    this.addEvent();
+  }
 
   // 선택한 음료수 목록 생성
   selectedItemGenerator(target) {
@@ -27,6 +30,29 @@ class VendingMachine {
     <span class="count">1</span>
       `;
     this.selectedList.appendChild(selectedItem);
+  }
+
+  addEvent() {
+    // 1. 입금 버튼 기능
+    this.btnPay.addEventListener("click", (event) => {
+      const inputCost = parseInt(this.inputCostVal.value);
+      const budgetVal = parseInt(this.budget.textContent.replaceAll(",", ""));
+      const changeVal = parseInt(this.change.textContent.replaceAll(",", ""));
+
+      if (inputCost) {
+        if (inputCost <= budgetVal && budgetVal > 0) {
+          this.budget.textContent =
+            new Intl.NumberFormat().format(budgetVal - inputCost) + " 원";
+          this.change.textContent =
+            new Intl.NumberFormat().format(
+              (changeVal ? changeVal : 0) + inputCost
+            ) + " 원";
+        } else {
+          alert("소지금이 부족합니다.");
+        }
+        this.inputCostVal.value = null;
+      }
+    });
   }
 }
 
