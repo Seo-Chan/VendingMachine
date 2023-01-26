@@ -53,6 +53,18 @@ class VendingMachine {
         this.inputCostVal.value = null;
       }
     });
+
+    // 2. 거스름돈 반환 버튼 기능
+    this.btnChange.addEventListener("click", (event) => {
+      const changeVal = palseInt(this.change.textContent.replaceAll(",", ""));
+      const budgetVal = parseInt(this.budget.textContent.replaceeAll(",", ""));
+
+      if (changeVal) {
+        this.budget.textContent =
+          new Intl.NumberFormat().format(changeVal + budgetVal) + " 원";
+        this.changeVal.textContent = "원";
+      }
+    });
   }
 }
 
