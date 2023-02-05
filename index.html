@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,6 +7,12 @@
     <title>Vending Machine</title>
     <link rel="stylesheet" href="/src/style/reset.css" />
     <link rel="stylesheet" href="/src/style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -18,50 +24,7 @@
       <main>
         <section class="buy-item">
           <h2 class="ir">자판기 화면</h2>
-          <ul class="list-item">
-            <li class="btn-cola">
-              <button>
-                <img src="/src/img/original_cola.svg" alt="original cola" />
-                <strong class="name-cola">Original_Cola</strong>
-                <span class="price-cola">1000원</span>
-              </button>
-            </li>
-            <li class="btn-cola">
-              <button>
-                <img src="/src/img/violet_cola.svg" alt="violet cola" />
-                <strong class="name-cola">Violet_Cola</strong>
-                <span class="price-cola">1000원</span>
-              </button>
-            </li>
-            <li class="btn-cola">
-              <button>
-                <img src="/src/img/yellow_cola.svg" alt="yellow cola" />
-                <strong class="name-cola">Yellow_Cola</strong>
-                <sapn class="price-cola">1000원</sapn>
-              </button>
-            </li>
-            <li class="btn-cola">
-              <button>
-                <img src="/src/img/cool_cola.svg" alt="cool cola" />
-                <strong class="name-cola">Cool_Cola</strong>
-                <span class="price-cola">1000원</span>
-              </button>
-            </li>
-            <li class="btn-cola">
-              <button>
-                <img src="/src/img/Green_Cola.svg" alt="green cola" />
-                <strong class="name-cola">Green_Cola</strong>
-                <span class="price-cola">1000원</span>
-              </button>
-            </li>
-            <li class="btn-cola">
-              <button>
-                <img src="/src/img/Orange_Cola.svg" alt="orange cola" />
-                <strong class="name-cola">Orange_Cola</strong>
-                <span class="price-cola">1000원</span>
-              </button>
-            </li>
-          </ul>
+          <ul class="list-item"></ul>
           <section class="select-item">
             <h3 class="ir">선택한 아이템 현황</h3>
             <div class="cur-change">
@@ -73,36 +36,7 @@
               <input type="text" class="txt-pay" placeholder="입금액 입력" />
             </form>
             <button class="btn-pay">입금</button>
-            <ul class="select-list">
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Original_Cola.svg" alt="original cola" />
-                  <span class="select-name">Original_Cola</span>
-                </div>
-                <span class="count">1</span>
-              </li>
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Green_Cola.svg" alt="green cola" />
-                  <span class="select-name">Green_Cola</span>
-                </div>
-                <span class="count">2</span>
-              </li>
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Orange_Cola.svg" alt="orange cola" />
-                  <span class="select-name">Orange_Cola</span>
-                </div>
-                <span class="count">1</span>
-              </li>
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Violet_Cola.svg" alt="violet cola" />
-                  <span class="select-name">Violet_Cola</span>
-                </div>
-                <span class="count">5</span>
-              </li>
-            </ul>
+            <ul class="select-list"></ul>
             <button class="btn-get">획득</button>
           </section>
         </section>
@@ -112,41 +46,12 @@
             <h3 class="ir">현재 나의 소지금</h3>
             <div class="my-budget">
               <span class="budget">소지금</span>
-              <span class="txt-budget">0원</span>
+              <span class="txt-budget">10,000,000,000원</span>
             </div>
           </section>
           <section class="get-item">
             <h3 class="get">획득한 음료</h3>
-            <ul class="select-list get-item-list">
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Original_Cola.svg" alt="original cola" />
-                  <span class="select-name">Original_Cola</span>
-                </div>
-                <p class="count">1</p>
-              </li>
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Green_Cola.svg" alt="green cola" />
-                  <span class="select-name">Green_Cola</span>
-                </div>
-                <p class="count">2</p>
-              </li>
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Orange_Cola.svg" alt="orange cola" />
-                  <span class="select-name">Orange_Cola</span>
-                </div>
-                <p class="count">1</p>
-              </li>
-              <li>
-                <div class="select-cola">
-                  <img src="/src/img/Violet_Cola.svg" alt="violet cola" />
-                  <span class="select-name">Violet_Cola</span>
-                </div>
-                <p class="count">5</p>
-              </li>
-            </ul>
+            <ul class="select-list get-item-list"></ul>
             <div class="total-container">
               <span class="total">총금액</span>
               <span class="txt-total">0원</span>
@@ -155,5 +60,6 @@
         </section>
       </main>
     </div>
+    <script type="module" src="src/js/index.js"></script>
   </body>
 </html>
