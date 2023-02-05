@@ -56,13 +56,13 @@ class VendingMachine {
 
     // 2. 거스름돈 반환 버튼 기능
     this.btnChange.addEventListener("click", (event) => {
-      const changeVal = palseInt(this.change.textContent.replaceAll(",", ""));
-      const budgetVal = parseInt(this.budget.textContent.replaceeAll(",", ""));
+      const changeVal = parseInt(this.change.textContent.replaceAll(",", ""));
+      const budgetVal = parseInt(this.budget.textContent.replaceAll(",", ""));
 
       if (changeVal) {
         this.budget.textContent =
           new Intl.NumberFormat().format(changeVal + budgetVal) + " 원";
-        this.changeVal.textContent = "원";
+        this.change.textContent = "원";
       }
     });
 
@@ -130,13 +130,13 @@ class VendingMachine {
       this.getItemList.querySelectorAll("li").forEach((itemGot) => {
         totalPrice +=
           itemGot.dataset.price *
-          parseInt(itemGot.querySelector("count").textContent);
+          parseInt(itemGot.querySelector(".count").textContent);
       });
-      this.txtTotal.textContent = `총금액: ${new Intl.NumberFormat().format(
+      this.txtTotal.textContent = `${new Intl.NumberFormat().format(
         totalPrice
       )}원`;
     });
   }
 }
 
-export default Vendingmachine;
+export default VendingMachine;
