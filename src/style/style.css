@@ -6,6 +6,10 @@
   overflow: hidden;
 }
 
+.img-item {
+  width: 36px;
+}
+
 body {
   background-color: #eae8fe;
   width: 100%;
@@ -25,6 +29,7 @@ main {
   justify-content: center;
 }
 
+/* 자판기 스타일(왼쪽) */
 .buy-item {
   box-sizing: border-box;
   background-color: white;
@@ -33,13 +38,17 @@ main {
   padding: 31px 27px 28px 27px;
 }
 
-.list-item {
+.buy-item .list-item {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 
-.list-item .btn-item {
+.buy-item .list-item li {
+  position: relative;
+}
+
+.buy-item .list-item .btn-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,8 +58,29 @@ main {
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
 }
 
-.buy-item .list-item li {
-  position: relative;
+.buy-item .list-item .btn-item:focus {
+  outline: 3px solid #6327fe;
+}
+
+.buy-item .list-item .btn-item:hover {
+  outline: 3px solid #6327fe;
+}
+
+.buy-item .list-item .btn-item .name-cola {
+  font-size: 9px;
+  margin-top: 6px;
+}
+
+.buy-item .list-item .btn-item .price-cola {
+  background-color: #6327fe;
+  margin-top: 7px;
+  padding: 5px;
+  display: inline-block;
+  width: 70px;
+  font-size: 12px;
+  height: 22px;
+  color: white;
+  border-radius: 50px;
 }
 
 /* 품절일 경우 */
@@ -73,43 +103,14 @@ main {
   border-radius: 10px;
 }
 
-.img-item {
-  width: 36px;
-}
-
-/* 포커스 할 때마다 움직임 */
-.btn-cola button:focus {
-  outline: 3px solid #6327fe;
-}
-
-.btn-cola button:hover {
-  outline: 3px solid #6327fe;
-}
-
-.name-cola {
-  font-size: 9px;
-  margin-top: 6px;
-}
-
-.price-cola {
-  background-color: #6327fe;
-  margin-top: 7px;
-  padding: 5px;
-  display: inline-block;
-  width: 70px;
-  font-size: 12px;
-  height: 22px;
-  color: white;
-  border-radius: 50px;
-}
-
-.select-item {
+/* 잔액, 입금, 획득 리스트 */
+.buy-item .select-item {
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin: 20px 0 0 0;
 }
 
-.cur-change {
+.buy-item .select-item .cur-change {
   background-color: #eae8fe;
   width: 200px;
   height: 33px;
@@ -121,12 +122,12 @@ main {
   border-radius: 5px;
 }
 
-.change::after {
+.buy-item .select-item .cur-change .change::after {
   content: ":";
   margin-left: 3px;
 }
 
-.btn-change {
+.buy-item .select-item .btn-change {
   background-color: white;
   margin-left: 12px;
   width: 94px;
@@ -137,7 +138,7 @@ main {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-.txt-pay {
+.buy-item .select-item .txt-pay {
   border-radius: 5px;
   border: 1px solid #c5c5c5;
   width: 200px;
@@ -150,7 +151,7 @@ main {
   color: #c5c5c5;
 }
 
-.btn-pay {
+.buy-item .select-item .btn-pay {
   background-color: white;
   margin: 11px 0 12px 12px;
   width: 94px;
@@ -160,7 +161,7 @@ main {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 
-.select-list {
+.buy-item .select-item .select-list {
   border-radius: 5px;
   border: 1px solid #c5c5c5;
   background-color: #eae8fe;
@@ -168,22 +169,6 @@ main {
   height: 106px;
   overflow-y: scroll;
   overflow-x: hidden;
-}
-
-/* 스크롤바 만드는법 */
-.select-list::-webkit-scrollbar {
-  width: 10px;
-}
-
-.select-list::-webkit-scrollbar-thumb {
-  background-color: #fff;
-  border-radius: 50px;
-  background-clip: padding-box;
-  border: 3px solid transparent;
-}
-
-.select-list::-webkit-scrollbar-track {
-  margin: 5px;
 }
 
 .select-list li img {
@@ -222,7 +207,23 @@ main {
   text-align: center;
 }
 
-.btn-get {
+/* 스크롤바 */
+.buy-item .select-item .select-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.buy-item .select-item .select-list::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 50px;
+  background-clip: padding-box;
+  border: 3px solid transparent;
+}
+
+.buy-item .select-item .select-list::-webkit-scrollbar-track {
+  margin: 5px;
+}
+
+.buy-item .select-item .btn-get {
   background-color: #6327fe;
   width: 94px;
   height: 106px;
@@ -232,6 +233,7 @@ main {
   font-size: 13px;
 }
 
+/* 나의 소지금(오른쪽) */
 .get-list {
   width: 360px;
   margin: 67px 0;
@@ -239,13 +241,13 @@ main {
   flex-direction: column;
 }
 
-.my-budget-container {
+.get-list .my-budget-container {
   background-color: white;
   width: 360px;
   height: 50px;
 }
 
-.my-budget {
+.get-list .my-budget-container .my-budget {
   background-color: #eae8fe;
   width: 306px;
   height: 32px;
@@ -256,6 +258,7 @@ main {
   padding: 10px 10px;
 }
 
+/* 획득한 음료 현황 */
 .get-item {
   background-color: white;
   margin-top: 20px;
@@ -287,33 +290,14 @@ main {
   border-radius: 5px;
 }
 
-.select-list .select-cola {
-  display: flex;
-  align-items: center;
-}
-
-.select-list .select-cola .select-name {
-  margin-left: 10px;
-}
-
-.select-list li .count {
-  width: 30px;
-  height: 30px;
-  font-size: 14px;
-  border: 1px solid #c5c5c5;
-  border-radius: 5px;
-  line-height: 30px;
-  text-align: center;
-}
-
-.total-container {
+.get-item .total-container {
   width: 306px;
   margin-top: 6px;
   display: flex;
   justify-content: flex-end;
 }
 
-.total::after {
+.get-item .total-container .total::after {
   content: ":";
   margin: 0 3px;
 }
