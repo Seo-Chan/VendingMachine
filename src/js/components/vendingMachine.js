@@ -124,6 +124,7 @@ class VendingMachine {
             isGot = true;
             break;
           }
+          isGot = false;
         }
         if (!isGot) {
           this.getItemList.appendChild(itemSelected);
