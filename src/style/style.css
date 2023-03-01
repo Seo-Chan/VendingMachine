@@ -49,6 +49,30 @@ main {
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
 }
 
+.buy-item .list-item li {
+  position: relative;
+}
+
+/* 품절일 경우 */
+.buy-item .list-item li.sold-out {
+  pointer-events: none;
+}
+
+.buy-item .list-item li.sold-out::before {
+  content: "품절";
+  color: transparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background: no-repeat center/ 60px 46px url(../img/Sold-out.png)
+    rgba(0, 0, 0, 80%);
+  border-radius: 10px;
+}
+
 .img-item {
   width: 36px;
 }
