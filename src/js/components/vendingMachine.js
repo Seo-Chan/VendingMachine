@@ -97,6 +97,11 @@ class VendingMachine {
           }
 
           targetEl.dataset.count--;
+
+          // 품절되었을 경우
+          if (targetEl.dataset.count == 0) {
+            targetEl.parentNode.classList.add("sold-out");
+          }
         } else {
           alert("잔액이 부족합니다. 돈을 입금해주세요");
         }
