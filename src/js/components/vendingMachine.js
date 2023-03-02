@@ -24,7 +24,7 @@ class VendingMachine {
     selectedItem.dataset.item = target.dataset.item;
     selectedItem.dataset.price = target.dataset.price;
     selectedItem.innerHTML = `<div class="select-cola">
-      <img src="/src/img/${target.dataset.img}" alt="" />
+      <img src="./src/img/${target.dataset.img}" alt="" />
       <strong class="select-name">${target.dataset.item}</strong>
     </div>
     <span class="count">1</span>

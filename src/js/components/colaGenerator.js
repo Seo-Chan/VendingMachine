@@ -10,7 +10,7 @@ class ColaGenerator {
   }
 
   async loadData(callback) {
-    const response = await fetch("src/js/item.json");
+    const response = await fetch("./src/js/item.json");
 
     if (response.ok) {
       callback(await response.json());
@@ -25,7 +25,7 @@ class ColaGenerator {
       const item = document.createElement("li");
       const itemTemplate = `
         <button type="button" class="btn-item" data-item="${el.name}" data-count="${el.count}" data-price="${el.cost}" data-img="${el.img}">
-                <img src="/src/img/${el.img}" alt="" class="img-item"/>
+                <img src="./src/img/${el.img}" alt="" class="img-item"/>
                 <strong class="name-cola">${el.name}</strong>
                 <span class="price-cola">${el.cost}원</span>
               </button>`;
