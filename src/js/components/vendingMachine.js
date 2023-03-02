@@ -40,6 +40,11 @@ class VendingMachine {
       const changeVal = parseInt(this.change.textContent.replaceAll(",", ""));
 
       if (inputCost) {
+        if (inputCost < 0) {
+          alert("올바른 금액을 입력해주세요.");
+          this.inputCostVal.value = null;
+          return;
+        }
         if (inputCost <= budgetVal && budgetVal > 0) {
           this.budget.textContent =
             new Intl.NumberFormat().format(budgetVal - inputCost) + " 원";
